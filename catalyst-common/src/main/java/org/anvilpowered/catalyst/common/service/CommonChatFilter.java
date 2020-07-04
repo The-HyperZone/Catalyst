@@ -37,8 +37,10 @@ public class CommonChatFilter implements ChatFilter {
     public String stripMessage(String checkMessage) {
         return checkMessage.toLowerCase()
             .replaceAll("[*()/.,;'#~^+\\-]", " ").replaceAll("[0@]", "o")
-            .replaceAll("1", "i").replaceAll("\\$", "s"
-            ); // Replaces any special characters with their letter equivalent or a space
+            .replaceAll("1", "i")
+            .replaceAll("!", "i")
+            .replaceAll("\\$", "s");
+        // Replaces any special characters with their letter equivalent or a space
     }
 
     // Generates a list with the locations of all the spaces in the original message - for index replacement later

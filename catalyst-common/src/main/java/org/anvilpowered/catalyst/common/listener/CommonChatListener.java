@@ -85,6 +85,7 @@ public class CommonChatListener<
             if (!permissionService.hasPermission(player, registry.getOrDefault(CatalystKeys.LANGUAGE_ADMIN_PERMISSION))) {
                 message = chatFilter.replaceSwears(message);
             }
+            event.setRawMessage(message);
             chatService.sendChatMessage(event);
         } else {
             throw new AssertionError(
