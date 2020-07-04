@@ -85,6 +85,9 @@ public class CommonChatFilter implements ChatFilter {
                         // +1 to extraEndSpace as the next function in replaceSwears is exclusive
                         int[] wordLocation = new int[]{startIndex + extraStartSpace, endIndex + extraEndSpace + 1};
                         swearList.add(wordLocation);
+                    } else {
+                        int[] wordLocation = new int[]{startIndex + extraStartSpace, endIndex + extraEndSpace + 2};
+                        swearList.add(wordLocation);
                     }
                     startIndex = message.indexOf(bannedWord, startIndex + 1); // checks for any more instances of the banned word
                 }
